@@ -1,0 +1,1 @@
+# print("Abuzayning projecti O'quv markazning Api✔")
