@@ -6,5 +6,7 @@ class AppUsersConfig(AppConfig):
 
     def ready(self):
         from django.apps import apps
-        Worker = apps.get_model('app_users', 'Worker')  # ✅ Bu yerda chaqiring
-
+        try:
+            Worker = apps.get_model('app_users', 'Worker')  # ❌ Agar Worker yo‘q bo‘lsa, xato beradi!
+        except LookupError:
+            pass  # ✅ Xatolik bo‘lsa, hech narsa qilmasin

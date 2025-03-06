@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view
 from .models import Worker, Student, Staff, Parents, Teacher
 from .serializers import WorkerSerializer, StudentSerializer, StaffSerializer, ParentsSerializer, TeacherSerializer
 
+
 # **ViewSets for ModelViewSet API**
 class TeacherViewSet(viewsets.ModelViewSet):
     queryset = Teacher.objects.all()
@@ -72,3 +73,4 @@ class ParentsListCreateView(generics.ListCreateAPIView):
 class ParentsDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Parents.objects.all()
     serializer_class = ParentsSerializer
+
